@@ -25,12 +25,20 @@
   <img src="https://fustelmeccanica.github.io/firme-email/festa.png" alt="Festa" style="width: 100px; height: 100px;"> <!-- Aggiunto segnaposto -->
 </div>
 
+<!-- Segnaposto per festa -->
+<div id="festaPlaceholder" style="text-align: center; display: none;">
+  <img id="festaImage" src="https://fustelmeccanica.github.io/firme-email/festa.png" alt="Festa" style="width: 100px; height: 100px;">
+</div>
+
 <script>
   // Controlla se l'immagine è disponibile
   const img = new Image();
   img.src = "https://fustelmeccanica.github.io/firme-email/festa.png";
   img.onload = function() {
       document.getElementById('festaPlaceholder').style.display = 'block'; // Mostra il segnaposto se l'immagine è caricata
+  };
+  img.onerror = function() {
+      document.getElementById('festaPlaceholder').style.display = 'none'; // Nascondi il segnaposto se l'immagine non è caricata
   };
 </script>
 
